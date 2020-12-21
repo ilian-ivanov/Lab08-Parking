@@ -13,7 +13,7 @@ namespace Lab08_Parking.Data.Repositories
 
         public async Task<Vehicle> AddVehicleAsync(Vehicle newVehicle)
         {
-            newVehicle.DiscountCardId = this.context.DiscountCards.Find(newVehicle.DiscountCardId)?.Discount;            
+            newVehicle.DiscountCardId = this.context.DiscountCards.Find(newVehicle.DiscountCardId)?.Id;            
             await this.context.Vehicles.AddAsync(newVehicle);
             await this.context.SaveChangesAsync();
 
